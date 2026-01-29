@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog – Bishnu Raj KC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='blog/css/blog.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Blog</h1>
+            <p>My learning notes and project updates</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('calculator_page') }}">Calculator</a>
+            <a href="{{ url_for('blog_page') }}">Blog</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container blog-container">
+            <h2>Latest Posts</h2>
+
+            <article class="blog-post">
+                <h3>Learning Flask Basics</h3>
+                <p>Exploring Flask routes, templates, and building small interactive apps like calculators.</p>
+            </article>
+
+            <article class="blog-post">
+                <h3>Building Responsive Web Pages</h3>
+                <p>How to make a mobile-friendly homepage with modern CSS techniques and flexible layouts.</p>
+            </article>
+
+            <article class="blog-post">
+                <h3>My Portfolio Journey</h3>
+                <p>Documenting the learning process of web development and full-stack experiments.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bishnu Raj KC</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='blog/js/blog.js') }}"></script>
+</body>
+</html>
 
