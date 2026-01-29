@@ -1,103 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Calculator</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        h1 { margin-bottom: 20px; }
-        nav a { margin-right: 10px; }
-        input, select, button { margin: 5px; padding: 5px; }
-        #result { margin-top: 20px; font-weight: bold; }
-        #history { margin-top: 20px; }
-    </style>
+    <title>Flask Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<h1>Flask Calculator</h1>
+<div class="calculator">
+    <h2>Calculator</h2>
 
-<nav>
-    <a href="/">Home</a> |
-    <a href="/calculator">Calculator</a> |
-    <a href="/blog">Blog</a>
-</nav>
+    <input type="number" id="a" placeholder="Number 1">
+    <input type="number" id="b" placeholder="Number 2">
 
-<hr>
+    <div class="buttons">
+        <button onclick="calc('add')">+</button>
+        <button onclick="calc('sub')">−</button>
+        <button onclick="calc('mul')">×</button>
+        <button onclick="calc('div')">÷</button>
+        <button onclick="calc('sqrt')">√</button>
+    </div>
 
-<!-- Inputs for operations -->
-<label>Number 1:</label>
-<input type="number" id="num1" step="any">
-<label>Number 2:</label>
-<input type="number" id="num2" step="any">
+    <h3 id="result">Result: —</h3>
 
-<br>
-
-<label>Operation:</label>
-<select id="operation">
-    <option value="add">Add</option>
-    <option value="subtract">Subtract</option>
-    <option value="multiply">Multiply</option>
-    <option value="divide">Divide</option>
-    <option value="power">Power</option>
-    <option value="percentage">Percentage</option>
-    <option value="sqrt">Square Root (num1)</option>
-    <option value="sin">Sin (num1)</option>
-    <option value="cos">Cos (num1)</option>
-    <option value="tan">Tan (num1)</option>
-    <option value="log">Log (num1)</option>
-    <option value="exp">Exp (num1)</option>
-    <option value="factorial">Factorial (num1)</option>
-    <option value="km_to_miles">Km → Miles</option>
-    <option value="kg_to_pounds">Kg → Pounds</option>
-    <option value="m_to_feet">M → Feet</option>
-    <option value="l_to_gallon">L → Gallons</option>
-    <option value="usd_to_inr">USD → INR</option>
-    <option value="eur_to_inr">EUR → INR</option>
-    <option value="c_to_f">C → F</option>
-    <option value="f_to_c">F → C</option>
-</select>
-
-<br>
-<button onclick="calculate()">Calculate</button>
-<button onclick="memoryStore()">Memory Store</button>
-<button onclick="memoryRecall()">Memory Recall</button>
-<button onclick="memoryClear()">Memory Clear</button>
-<button onclick="clearHistory()">Clear History</button>
-
-<div id="result">Result: </div>
-
-<div id="history">
-    <h3>History:</h3>
-    <ul id="historyList"></ul>
+    <div class="history">
+        <h4>History</h4>
+        <ul id="history"></ul>
+    </div>
 </div>
 
-<script>
-let memory = {{ memory|tojson }};
-
-// Function to perform calculation
-function calculate() {
-    const num1 = document.getElementById("num1").value;
-    const num2 = document.getElementById("num2").value;
-    const operation = document.getElementById("operation").value;
-
-    fetch("/calculate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ num1: num1, num2: num2, operation: operation })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.error) {
-            document.getElementById("result").innerText = "Error: " + data.error;
-        } else {
-            document.getElementById("result").innerText = "Result: " + data.result;
-            updateHistory(data.history);
-            memory = data.memory;
-        }
-    });
-}
-
-// Memory functions
-function memoryStore() {
-    const num1 = doc
-
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
