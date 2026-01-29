@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bishnu Raj KC – Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='calculator/css/calculator.css') }}">
-</head>
-
+    <!-- Link custom CSS for homepage -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='index/css/index.css') }}">
 </head>
 <body>
 
-    <h1>Welcome to Bishnu Raj KC Portfolio</h1>
+    <header>
+        <div class="container">
+            <h1>Bishnu Raj KC</h1>
+            <p>Web Developer | Learning Full-Stack Development | Flask Enthusiast</p>
+        </div>
+    </header>
 
     <nav>
-        <a href="/">Home</a> |
-        <a href="/calculator">Calculator</a> |
-        <a href="/blog">Blog</a>
+        <div class="container">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('calculator_page') }}">Calculator</a>
+            <a href="{{ url_for('blog_page') }}">Blog</a>
+        </div>
     </nav>
 
-    <p>
-        This website is built using Flask and deployed on Render.
-    </p>
+    <main>
+        <div class="container">
+            <h2>Welcome to My Portfolio</h2>
+            <p>
+                Hello! I’m Bishnu Raj KC, a passionate web developer learning full-stack development with Flask and other modern web technologies.
+                This website showcases my learning projects and experimentation with interactive tools like calculators and blogs.
+            </p>
+            <p>
+                Navigate through the site using the buttons above to see my calculator project and blog posts.
+            </p>
+        </div>
+    </main>
 
-    <p>
-        Learning project for web development.
-    </p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bishnu Raj KC. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <!-- Optional JS for interactivity -->
+    <script src="{{ url_for('static', filename='index/js/index.js') }}"></script>
 </body>
 </html>
-
