@@ -12,3 +12,18 @@ function calc(op) {
 
     document.getElementById("result").innerText = "Result: " + result;
 }
+
+function clearCalculator() {
+    document.getElementById("a").value = "";
+    document.getElementById("b").value = "";
+    document.getElementById("result").innerText = "";
+    
+    // Clear history if you want to reset it too
+    const historyList = document.getElementById("history");
+    historyList.innerHTML = "";
+
+    // Optional: clear JS history array if you are tracking
+    if (typeof history !== "undefined") {
+        history = [];
+    }
+}
