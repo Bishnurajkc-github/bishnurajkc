@@ -1,1 +1,106 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background-color: #1e90ff;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+/* Navigation */
+nav {
+    background-color: #fff;
+    border-bottom: 2px solid #1e90ff;
+}
+
+nav .container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 12px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1e90ff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #0d3c91;
+}
+
+/* Main content */
+main h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+/* Blog posts */
+.blog-post {
+    background-color: #fff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.blog-post h3 {
+    color: #1e90ff;
+    margin-bottom: 10px;
+}
+
+.blog-post p {
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #1e90ff;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav .container {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
 
