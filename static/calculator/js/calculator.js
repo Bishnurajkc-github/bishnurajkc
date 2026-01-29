@@ -1,45 +1,14 @@
-// Function to perform calculator operations
 function calc(op) {
-    const a = document.getElementById("a").value;
-    const b = document.getElementById("b").value;
+    const a = parseFloat(document.getElementById("a").value);
+    const b = parseFloat(document.getElementById("b").value);
+    let result;
 
-    fetch("/calculate", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ operation: op, num1: a, num2: b })
-    })
-    .then(res => res.json())
-    .then(data => {
-        const resultDiv = document.getElementById("result");
-        const historyList = document.getElementById("history");
+    if (op === "add") result = a + b;
+    else if (op === "subtract") result = a - b;
+    else if (op === "multiply") result = a * b;
+    else if (op === "divide") result = b !== 0 ? a / b : "Cannot divide by zero!";
+    else if (op === "power") result = a ** b;
+    else if (op === "sqrt") result = a >= 0 ? Math.sqrt(a) : "Invalid input";
 
-        // Clear previous result
-        resultDiv.innerText = "";
-
-        // Handle errors
-        if (data.error) {
-            resultDiv.innerText = "Error: " + data.error;
-            return;
-        }
-
-        // Show result
-        if (data.result !== undefined) {
-            resultDiv.innerText = "Result: " + data.result;
-        }
-
-        // Update history (last 10 items)
-        if (data.history) {
-            historyList.innerHTML = "";
-            data.history.forEach(item => {
-                const li = document.createElement("li");
-                li.innerText = item;
-                historyList.appendChild(li);
-            });
-        }
-    })
-    .catch(err => {
-        document.getElementById("result").innerText = "Error: " + err;
-    });
+    document.getElementById("result").innerText = "Result: " + result;
 }
