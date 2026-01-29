@@ -27,11 +27,13 @@
         <div class="container calculator-container">
             <h2>Interactive Calculator</h2>
 
+            <!-- Inputs -->
             <div class="calculator-inputs">
                 <input type="number" id="a" placeholder="Enter first number">
                 <input type="number" id="b" placeholder="Enter second number">
             </div>
 
+            <!-- Buttons -->
             <div class="calculator-buttons">
                 <button onclick="calc('add')">+</button>
                 <button onclick="calc('subtract')">−</button>
@@ -42,10 +44,14 @@
                 <button onclick="calc('sin')">sin</button>
                 <button onclick="calc('cos')">cos</button>
                 <button onclick="calc('tan')">tan</button>
+                <!-- Clear button -->
+                <button onclick="clearCalculator()">Clear</button>
             </div>
 
-            <div id="result" class="calculator-result"></div>
+            <!-- Result -->
+            <div id="result" class="calculator-result">Result: </div>
 
+            <!-- History -->
             <h3>History</h3>
             <ul id="history" class="calculator-history"></ul>
         </div>
