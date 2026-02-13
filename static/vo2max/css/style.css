@@ -1,1 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
+body {
+  background: #f4f6f8;
+  color: #222;
+  line-height: 1.7;
+}
+
+.container {
+  width: 92%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.hero {
+  padding: 35px 0;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+#toggleModeBtn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: white;
+  color: #1d4ed8;
+  font-weight: bold;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin: 18px 0;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  color: #1d4ed8;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.card h3 {
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+.highlight {
+  margin-top: 12px;
+  padding: 12px;
+  border-left: 5px solid #1d4ed8;
+  background: #eef2ff;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.note {
+  margin-top: 15px;
+  padding: 12px;
+  background: #f0fdf4;
+  border-left: 5px solid #16a34a;
+  border-radius: 8px;
+}
+
+.small {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.box {
+  padding: 15px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.plan p {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.warning {
+  border-left: 5px solid #dc2626;
+  background: #fff1f2;
+}
+
+#copyBtn {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #1d4ed8;
+  color: white;
+  font-weight: bold;
+}
+
+#copyMsg {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: green;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0f172a;
+  color: white;
+  margin-top: 25px;
+}
+
+/* Dark mode */
+body.dark {
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+body.dark .card {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+body.dark .box {
+  background: #0b1220;
+  border: 1px solid #334155;
+}
+
+body.dark footer {
+  background: black;
+}
+
+body.dark .highlight {
+  background: #1e293b;
+  border-left: 5px solid #60a5fa;
+}
+
+body.dark .note {
+  background: #052e16;
+  border-left: 5px solid #22c55e;
+}
+
+@media(max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Read more vo2max hover detail css */
+.read-more {
+  display: inline-block;
+  margin-top: 6px;
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
