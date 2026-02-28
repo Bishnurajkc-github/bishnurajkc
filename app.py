@@ -37,6 +37,11 @@ def blog_detail(slug):
 
 # ---------------- OTHER PAGES ----------------
 
+@app.route('/blog/vo2max')
+def vo2max_page():
+    return render_template('vo2max/index.html')
+
+
 @app.route("/projects")
 def projects():
     return render_template("blog/projects.html")
