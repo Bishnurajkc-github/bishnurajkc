@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Contact | Bishnu Blog{% endblock %}
+
+{% block content %}
+
+<section class="contact-page">
+    <h1>Contact Me</h1>
+    <p>If you’d like to connect, collaborate, or just say hi, feel free to reach out!</p>
+
+    <form action="#" method="POST">
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Your name"><br><br>
+
+        <label for="email">Your Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Your email"><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" placeholder="Your message"></textarea><br><br>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+{% endblock %}

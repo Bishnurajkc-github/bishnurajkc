@@ -1,0 +1,64 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Home | Bishnu Blog{% endblock %}
+
+{% block content %}
+
+<!-- Hero / Welcome Section -->
+<section class="hero">
+    <h1>Hi, I’m Bishnu!</h1>
+    <p>Welcome to my blog about my hobbies, travels, and life experiments.</p>
+    <!-- Optional: Add a photo -->
+    <!-- <img src="{{ url_for('static', filename='blog/images/selfierg.jpg') }}" alt="Bishnu Raj KC"> -->
+</section>
+
+<!-- Featured / Latest Blog Posts -->
+<section class="latest-posts">
+    <h2>Latest Posts</h2>
+    <ul>
+        {% for post in latest_posts %}
+            <li>
+                <a href="{{ url_for('blog_detail', slug=post.slug) }}">
+                    {{ post.title }}
+                </a>
+                <p>{{ post.content[:100] }}{% if post.content|length > 100 %}...{% endif %}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('blog') }}">View All Posts →</a>
+</section>
+
+<!-- Interest Sections / Teasers -->
+<section class="interests">
+    <h2>My Interests</h2>
+    <div class="interest-cards">
+        <div class="card">
+            <h3>Fitness</h3>
+            <p>Cycling, Gym, Tennis</p>
+        </div>
+        <div class="card">
+            <h3>Music</h3>
+            <p>Guitar, Singing</p>
+        </div>
+        <div class="card">
+            <h3>Creative</h3>
+            <p>Blogging, Cooking, DIY Projects</p>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Projects / Fun Experiments -->
+<section class="projects">
+    <h2>Recent Projects & Experiments</h2>
+    <p>Check out my coding experiments, DIY projects, and fun experiments!</p>
+    <a href="{{ url_for('projects') }}">View Projects →</a>
+</section>
+
+<!-- Call-to-Action / Contact -->
+<section class="contact-cta">
+    <h2>Get in Touch</h2>
+    <p>If you’d like to connect or share ideas, feel free to reach out!</p>
+    <a href="{{ url_for('contact') }}">Contact Me →</a>
+</section>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Blog | Bishnu Blog{% endblock %}
+
+{% block content %}
+<h1>All Blog Posts</h1>
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="{{ url_for('blog_detail', slug=post.slug) }}">
+                {{ post.title }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
