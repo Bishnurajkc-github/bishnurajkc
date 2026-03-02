@@ -155,6 +155,20 @@ header {
     margin-top: 0.5rem;
 }
 
+/* ===== About Page CSS ===== */
+
+.about-page {
+    padding: 2rem 1.5rem;
+}
+
+.about-page h2 {
+    margin-top: 1.5rem;
+}
+
+.about-page ul {
+    margin-left: 1.2rem;
+}
+
 
 
 /* ===== Interest Sections / Cards ===== */
