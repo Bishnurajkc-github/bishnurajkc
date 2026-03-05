@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Bishnu Blog{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='blog/css/style.css') }}">
+    
+    <!-- Social Sharing Meta Tags -->
+    <meta property="og:title" content="Bishnu KC Blog">
+    <meta property="og:description" content="Personal blog about coding, guitar, and projects">
+    <meta property="og:image" content="{{ url_for('static', filename='images/preview-selfie.jpg', _external=True) }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+
+    <!-- Optional: Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bishnu KC Blog">
+    <meta name="twitter:description" content="Personal blog about coding, guitar, and projects">
+    <meta name="twitter:image" content="{{ url_for('static', filename='images/social-preview.jpg', _external=True) }}">
+
 </head>
 <body>
     <header>
